@@ -26,6 +26,13 @@ public class newprogram {
         double sol = a*100;
         System.out.println(sol);
     }
+    public static void usdtopound(double a){
+        double sol = a*0.64;
+        System.out.println(sol);
+    }
+    public static void poundtousd(double a){
+        double sol = a/64;
+        System.out.println(sol);
     public static void main(String[] args) {
         Scanner ip = new Scanner(System.in);
         System.out.println("Welcome to the currency converter");
@@ -38,6 +45,8 @@ public class newprogram {
             System.out.println("enter 4 for usd to yen");
             System.out.println("enter 5 for inr to yen");
             System.out.println("enter 6 for yen to inr");
+            System.out.println("enter 7 for usd to pound");
+            System.out.println("enter 8 for pound to usd");
             int opt = ip.nextInt();
             switch(opt){
                 case 1:
@@ -70,16 +79,30 @@ public class newprogram {
                     double f = ip.nextInt();
                     yentoinr(f);
                     break;
+                case 7:
+                    System.out.println("enter the amount");
+                    double g = ip.nextInt();
+                    usdtopound(g);
+                    break;
+                case 8:
+                    System.out.println("enter thw amount");
+                    double h = ip.nextInt();
+                    poundtousd(h);
+                    break;
+                    
+                    
                 default:
                     System.out.println("Please enter a correct value");
             }
             System.out.println("Continue? (y/n)"); 
             cont = ip.next().toLowerCase().charAt(0); 
             ip.nextLine();
-        }while(cont == 'y');
+        }
+        while(cont == 'y');
             System.out.println("Exiting Program");
         ip.close();
         
     }
     
 }
+
